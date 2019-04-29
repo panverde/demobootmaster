@@ -1,8 +1,8 @@
 package com.joaquin.config.validate;
 
-import lombok.Data;
-
 import java.util.List;
+
+import lombok.Data;
 
 @Data
 public class ValidateException extends RuntimeException {

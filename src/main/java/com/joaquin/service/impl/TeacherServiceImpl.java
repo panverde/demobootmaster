@@ -36,6 +36,12 @@ public class TeacherServiceImpl implements ITeacherService {
     return repositoryTeacher.save(obj);
   }
 
+  /**
+   * This method is responsible for updating the records of a teacher.
+   * @author joaquin.com
+   * @param id represents the idTeacher of type integer.
+   */
+
   @Override
   public void update(Teacher obj, Integer id) {
 
@@ -58,6 +64,13 @@ public class TeacherServiceImpl implements ITeacherService {
     }
 
   }
+
+  /**
+   * This this method is responsible for deleting a record of the teacher table and
+   * its forename in the class table.
+   * @author joaquin.com
+   * @param id represents the idTeacher of type integer.
+   */
 
   @Override
   public void delete(Integer id) {

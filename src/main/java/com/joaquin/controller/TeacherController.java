@@ -82,12 +82,7 @@ public class TeacherController {
   @ApiOperation(value = "delete existing teacher.")
   @DeleteMapping("/{teacherId}")
   public void deleteTeacher(@PathVariable("teacherId") Integer id) {
-    try {
-      teacherService.delete(id);
-      log.info("delete teacher id :" + id);
-    } catch (Exception e) {
-      log.error("Teacher delete error" + e);
-    }
+    teacherService.delete(id);
   }
 
 }

@@ -33,6 +33,12 @@ public class SubjectServiceImpl implements ISubjectService {
     return repositorySubject.save(obj);
   }
 
+  /**
+   * This method is responsible for updating the records of a subject.
+   * @author joaquin.com
+   * @param id represents the idSubject of type integer.
+   */
+
   @Override
   public void update(Subject obj, Integer id) {
 
@@ -51,6 +57,13 @@ public class SubjectServiceImpl implements ISubjectService {
     }
 
   }
+
+  /**
+   * This this method is responsible for deleting a record of the subject table and
+   * its forename in the class table.
+   * @author joaquin.com
+   * @param id represents the idSubject of type integer.
+   */
 
   @Override
   public void delete(Integer id) {

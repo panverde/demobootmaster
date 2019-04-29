@@ -14,6 +14,7 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 public class CustomLocaleResolver extends AcceptHeaderLocaleResolver implements WebMvcConfigurer {
 
   /**
+   * es: Definir la configuracion regional del usuario.
    *set the list of languages ​​by default will be es javadoc joaquin.com
    */
   List<Locale> listLocal = Arrays.asList(
@@ -21,6 +22,7 @@ public class CustomLocaleResolver extends AcceptHeaderLocaleResolver implements 
           new Locale("en"));
 
   /**
+   * es: La configuración regional se debe pasar en el encabezado denominado Aceptar idioma.
    *check if the Accept-Language header is activated javadoc joaquin.com
    */
   @Override

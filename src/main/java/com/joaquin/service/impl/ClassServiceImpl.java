@@ -41,6 +41,12 @@ public class ClassServiceImpl implements IClassService {
     return repositoryClass.save(obj);
   }
 
+  /**
+   * This method is responsible for updating the records of a class.
+   * @author joaquin.com
+   * @param id represents the idClass of type integer.
+   */
+
   @Override
   public void update(Classes obj, Integer id) {
 
@@ -65,13 +71,33 @@ public class ClassServiceImpl implements IClassService {
 
   }
 
+  /**
+   * This this method is responsible for deleting a record of the class table and
+   * its forename in the studentclass table.
+   * @author joaquin.com
+   * @param id represents the idClass of type integer.
+   */
+
   @Override
   public void delete(Integer id) {
 
-    repositoryStudentClass.deleteStudentClassByPrimaryKeyClassIdId(id);
-    repositoryClass.deleteById(id);
+    Optional<Classes> classOptional = repositoryClass.findById(id);
+
+    if (classOptional.isPresent()) {
+      repositoryStudentClass.deleteStudentClassByPrimaryKeyClassIdId(id);
+      repositoryClass.deleteById(id);
+    } else {
+      log.warn("Not found ID");
+    }
 
   }
+
+  /**
+   * This method is responsible for bringing the list of students enrolled in the same class.
+   * @author joaquin.com
+   * @param id represents the idClass of type integer.
+   * @return class and list of students.
+   */
 
   @Override
   public List<ListClassResponse> findAllClassStudent(Integer id) {

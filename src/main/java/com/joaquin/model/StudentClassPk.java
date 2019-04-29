@@ -14,20 +14,20 @@ import lombok.Data;
 @Embeddable
 public class StudentClassPk implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+  /**
+   * Primary key compose StudentClassPk javadoc joaquin.com
+   */
+  private static final long serialVersionUID = 1L;
 
-	@ManyToOne
-	@JoinColumn(name = "classId")
-	private Classes classId;
+  @ManyToOne
+  @JoinColumn(name = "classId")
+  private Classes classId;
 
-	@ManyToOne
-	@JoinColumn(name = "student_id")
-	private Students student_id;
+  @ManyToOne
+  @JoinColumn(name = "student_id")
+  private Students student_id;
 
-	@Column(name = "dateFrom")
-	private Date dateFrom;
+  @Column(name = "dateFrom")
+  private Date dateFrom;
 
 }

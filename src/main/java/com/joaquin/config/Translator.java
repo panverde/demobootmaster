@@ -17,6 +17,11 @@ public class Translator {
     Translator.messageSource = messageSource;
   }
 
+  /**
+   * elegir el mensaje correcto de acuerdo con la configuración regional.
+   * msgCode consulta los codigos de mensaje en messages.properties
+   */
+
   public static String toLocale(String msgCode) {
     Locale locale = LocaleContextHolder.getLocale();
     return messageSource.getMessage(msgCode, null, msgCode, locale);

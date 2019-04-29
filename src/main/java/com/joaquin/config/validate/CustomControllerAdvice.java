@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-
-
 @Slf4j
 @ControllerAdvice
 public class CustomControllerAdvice {
+
+  /**
+   * CustomException  javadoc joaquin.com
+   */
 
   @ExceptionHandler(CustomException.class)
   @ResponseStatus(HttpStatus.CONFLICT)
@@ -20,9 +22,12 @@ public class CustomControllerAdvice {
   public String handleMyException(CustomException ex) {
 
     log.info("Error!! : " + ex);
-
     return "Error controlado";
   }
+
+  /**
+   * ValidateException  javadoc joaquin.com
+   */
 
   @ExceptionHandler(ValidateException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)

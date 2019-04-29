@@ -37,7 +37,7 @@ public class ClassController {
   private ClassServiceImpl classService;
 
   /**
-   * Controller Class Show the list of registered classes javadoc joaquin.com
+   * Controller Class show the list of registered classes javadoc joaquin.com
    */
 
   @ApiOperation(value = "See the list of all class.")
@@ -47,7 +47,8 @@ public class ClassController {
   }
 
   /**
-   * Controller Class Show the list of registered classes javadoc joaquin.com
+   * Controller Class show list of students enrolled in the same class
+   * javadoc joaquin.com
    */
 
   @ApiOperation(value = "See list of students in a class.")
@@ -94,12 +95,9 @@ public class ClassController {
   @ApiOperation(value = "delete existing class.")
   @DeleteMapping("/{classId}")
   public void deleteClass(@PathVariable("classId") Integer id) {
-    try {
-      classService.delete(id);
-      log.info("delete class id :" + id);
-    } catch (Exception e) {
-      log.error("Class delete error");
-    }
+
+    classService.delete(id);
+
   }
 
 
