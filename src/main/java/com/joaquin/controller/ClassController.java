@@ -36,11 +36,19 @@ public class ClassController {
   @Autowired
   private ClassServiceImpl classService;
 
+  /**
+   * Controller Class Show the list of registered classes javadoc joaquin.com
+   */
+
   @ApiOperation(value = "See the list of all class.")
   @GetMapping(value = "/")
   public List<Classes> listAllClass() {
     return classService.findAll();
   }
+
+  /**
+   * Controller Class Show the list of registered classes javadoc joaquin.com
+   */
 
   @ApiOperation(value = "See list of students in a class.")
   @GetMapping(value = "/list/{classId}")
